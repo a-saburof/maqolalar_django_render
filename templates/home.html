@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for maqola in object_list %}
+        <div class="col">
+            <div class="card">
+                <!--LINK FOR IMAGE OF THE POST-->
+                <img src="{{ maqola.image.url }}" style="height:200px; object-fit: none;object-position: center center;" class="card-img-top" alt="{{maqola.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{maqola.title}}</h5>
+                    <!--MINI TEXT OF THE POST-->
+                    <p class="card-text">{{ maqola.content | slice:":100" }}...</p>
+                    <a href="{% url 'maqola_detail' maqola.pk %}" class="btn btn-primary">To'liq o'qish</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">{{ maqola.date }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static './css/custom.css' %}">
+    <div class="container my-3 text-center">
+      <!--LINK FOR IMAGE-->
+      <img src="{{ maqola.image.url }}" class="img-fluid" alt="">
+    </div>
+
+    <!--TITLE OF THE POST-->
+    <h3 class="text-center">{{maqola.title}}</h3>
+    
+    <!--CONTENT OF THE POST-->
+    <p class="lead py-2 text-justify">{{maqola.content}}</p>
+    <p class="text-end" style="color:gray">{{maqola.date}}</p>
+{% endblock content %}

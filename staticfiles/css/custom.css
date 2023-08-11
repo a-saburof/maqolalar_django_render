@@ -1,0 +1,13 @@
+.img-fluid {
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+    .img-fluid {
+        width: 70%;
+    }
+}
+
+.text-justify {
+    text-align: justify;
+}
